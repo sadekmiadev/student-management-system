@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students | Student Management</title>
+    
+    <!-- ===== SHARED STYLES ===== -->
+    <link rel="stylesheet" href="../shared/style.css">
+    
+    <!-- ===== PAGE SPECIFIC STYLES ===== -->
+    <link rel="stylesheet" href="students.css">
+</head>
+<body>
+
+    <!-- ===== HEADER: Site Navigation ===== -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="brand">
+                <span class="brand-logo" aria-hidden="true">🎓</span>
+                <div>
+                    <h2 class="brand-title">Student Management System</h2>
+                    <p class="brand-subtitle">Manage Students</p>
+                </div>
+            </div>
+            <!-- Navigation links -->
+            <nav class="nav-links">
+                <a href="../dashboard/dashboard.html">Dashboard</a>
+                <a href="students.html" class="active">Students</a>
+                <button class="logout-nav-btn" id="logoutBtn">🚪 Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="container">
+        <div class="students-container">
+            
+            <!-- Students Header -->
+            <div class="students-header">
+                <h1>📚 All Students</h1>
+                <button class="btn-add" id="addStudentBtn">➕ Add New Student</button>
+            </div>
+
+            <!-- Students List - Dynamically populated -->
+            <div id="studentsList">
+                <!-- Loading state shown initially -->
+                <div class="loading-state">
+                    <div class="spinner"></div>
+                    <p style="margin-top: var(--space-md);">Loading students...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== ADD/EDIT STUDENT MODAL ===== -->
+    <div class="modal-overlay" id="studentModal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Add New Student</h2>
+            <form id="studentForm">
+                <div class="form-group">
+                    <label for="studentName">Name</label>
+                    <input type="text" id="studentName" placeholder="Enter student name" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentEmail">Email</label>
+                    <input type="email" id="studentEmail" placeholder="Enter email address" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentPhone">Phone</label>
+                    <input type="text" id="studentPhone" placeholder="Enter phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentCourse">Course</label>
+                    <input type="text" id="studentCourse" placeholder="Enter course name" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentSemester">Semester</label>
+                    <input type="text" id="studentSemester" placeholder="Enter semester" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentGPA">GPA</label>
+                    <input type="number" id="studentGPA" placeholder="0.00 - 4.00" step="0.01" min="0" max="4">
+                </div>
+                <div class="form-group">
+                    <label for="studentStatus">Status</label>
+                    <select id="studentStatus">
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+                <!-- Error message shown when validation fails -->
+                <div class="modal-error" id="modalError">Please fill in all required fields</div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancel-modal" id="cancelModalBtn">Cancel</button>
+                    <button type="submit" class="btn-submit" id="submitStudentBtn">Save Student</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Student Management System</p>
+        <p>CSE 3200 Web Programming Sessional Final Project</p>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <!-- Shared utilities (Auth, API) -->
+    <script src="../shared/common.js"></script>
+    <!-- Page specific logic -->
+    <script src="students.js"></script>
+</body>
+</html>
