@@ -59,7 +59,7 @@ Student-Management-System/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/sadekmia24845/student-management-system.git
+git clone https://github.com/sadekmiadev/student-management-system.git
 cd student-management-system
 
 
@@ -91,7 +91,7 @@ Password: admin123
 Author
 MD. Sadek Mia
 
-GitHub: @sadekmia24845
+GitHub: @sadekmiadev
 
 
 ## License
